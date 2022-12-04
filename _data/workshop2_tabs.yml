@@ -1,0 +1,13 @@
+alignment: is-left
+style: is-boxed
+size: is-large
+items:
+  - name: Overview
+    link: /workshops/workshop_2
+    icon: fa-dna
+  - name: Lecture
+    link: /workshops/workshop_2/lecture
+    icon: fa-book
+  - name: Practical
+    link: /workshops/workshop_2/practical
+    icon: fa-laptop-code

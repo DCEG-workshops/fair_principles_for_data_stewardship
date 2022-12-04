@@ -1,0 +1,12 @@
+- name: Workshops
+  link: /workshops
+  dropdown:
+    - name: 'Using RStudio with Box'
+      link: /workshops/workshop_1
+    - name: 'Using GitHub'
+      link: /workshops/workshop_2
+- name: Instructors
+  link: /instructors
+- name: News
+  link: /news
+
