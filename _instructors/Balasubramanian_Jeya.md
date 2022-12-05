@@ -1,5 +1,5 @@
 ---
-picture: jeya.jpg
+picture: jeya1.jpg
 name: Jeya Balaji Balasubramanian
 education: PhD
 organization: NCI-DCEG
