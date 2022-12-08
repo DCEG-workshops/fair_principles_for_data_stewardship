@@ -61,7 +61,7 @@ We shall now see how RStudio, Box, Git, and GitHub helps us adhere to these prin
 [In the first workshop of the FAIR workshop series](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_1), we showed how to incorporate Box within our RStudio work environment as shown in the diagram below. We remotely (from your computer to where Box is located on the internet) communicated with the Box service via [the R library `boxr`](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html).
 
 <div style="display: flex; justify-content: center">
-  <img src="images/box_api.png" alt="Diagram showing your computer communicating with Box via HTTP" width="35%"/>
+  <img src="images/box_api.png" alt="Diagram showing your computer communicating with Box via HTTP" width="50%"/>
 </div>
 
 The `boxr` library is built on top of the Box API. The Box API allows us to interact with Box programmatically. This means that we can write R scripts to upload our data on Box, retrieve it, modify it (while keeping track of all versions of the data), and/or selectively share it with others. We can also revoke access to our data from specific users at any time.
@@ -87,6 +87,48 @@ We achieved FAIRness by using Box to store and share our research data and by us
 
 ## Git & GitHub
 
+Let us start by distinguishing Git from GitHub.
+
+### Git
+
+[Git](https://git-scm.com/) is a *local*, *version control system* software.
+
+*Local* implies that the Git software exists within your computer. This can be any device you use for computing, for example— your NIH laptop, a Biowulf node, or a cloud virtual machine. You can download Git from [here](https://git-scm.com/downloads). In many Unix-based systems (e.g., Linux and Mac), Git comes pre-installed.
+
+A *version control system* is a software that helps you keep track of the changes you make to your files in a directory. It is a great tool to keep track of the changes you make to your code.
+
+There are multiple ways to access the Git software in your computer—
+- The command line (Terminal for Mac, Command Prompt for Windows).
+- A GUI (Graphical User Interface) software, such as— [GitKraken](https://www.gitkraken.com/), [GitHub Desktop](https://desktop.github.com/), or [SourceTree](https://www.sourcetreeapp.com/).
+- An RStudio add-in. [See instructions here](https://happygitwithr.com/index.html).
+
+For this workshop, we will use [GitHub Desktop](https://desktop.github.com/) to access the Git software in our computers. This is a GUI software developed by GitHub. Compared to the RStudio add-in, GitHub Desktop is more user-friendly and easier to use. Once you are comfortable using GitHub Desktop, you can switch to the RStudio add-in.
+
+
+### GitHub
+
+[GitHub](https://github.com/) is a *collaborative networking* website that provides a service to *remotely* *host* and manage copies of your project directories. 
+
+*Remote* implies that the GitHub website exists on the internet. You can access it from your computer either via a web browser or via the GitHub Desktop software.
+
+*Collaborative networking* means that you can share your project directories with other users (or store it for yourself to re-visit it in the future). This allows you to collaborate with other users. You can also share your project directories with the world. This allows other users to access your project directories and use them for their own projects. When you publish a paper, GitHub has become the de-facto standard platform for sharing the code used to generate the results in the paper.
+
+*Hosting service* is a service to remotely store copies of your project directories. This allows you to access your project directories from anywhere in the world. You can access your project directories from your computer, from a cloud virtual machine, or from a Biowulf node.
+
+There are other alternatives to GitHub, such as— [GitLab](https://about.gitlab.com/), [BitBucket](https://bitbucket.org/), and [SourceForge](https://sourceforge.net/). However, GitHub is the most popular and widely used platform for hosting your project directories. Once you are familiar with GitHub, you will become comfortable using these other platforms as well.
+
+
+### Proposed FAIR work setup with GitHub
+
+In this workshop, we will integrate GitHub with our existing RStudio-Box work environment from the first workshop, as shown in the diagram below. We will remotely communicate with the GitHub service via the GitHub Desktop software. This is a similar role that was provided by `boxr`, to communicate with Box, in the first workshop.
+
+<div style="display: flex; justify-content: center">
+  <img src="images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="50%"/>
+</div>
+
+This setup can be considered as a minimalistic *data commons*. [Data commons "co-locates data with cloud computing infrastructure and commonly used software services, tools & applications for managing, analyzing and sharing data to create an interoperable resource for a research community"](https://medium.com/@rgrossman1/a-proposed-end-to-end-principle-for-data-commons-5872f2fa8a47). In our version of the data commons, we being our own compute (e.g. our laptop). Both the data and the code exists in the cloud, thanks to Box and GitHub.
+
+We can immediately see the benefits of this setup. It gives us a flexible framework to plug-and-play with different datasets, while evaluating the same code (i.e. *replicating* studies). It also allows us to plug-and-play with different code solutions for the same problem (i.e. *benchmarking*). For *reproducing* a specific study, we simply need to locate and access a specific data object from Box and the specific code from GitHub.
 
 ### How does Git & GitHub help achieve FAIRness?
 
