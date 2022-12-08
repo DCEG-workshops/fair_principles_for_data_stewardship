@@ -6,7 +6,7 @@ permalink: workshops/workshop_2
 ### Introduction to GitHub
 
 <div style="display: flex; justify-content: center">
-  <img src="../../assets/images/github_workshop/octocat_r.png" alt="GitHub's mascot, the Octocat holding the logo of RStudio" width="30%"/>
+  <img src="{{ site.baseurl }}/assets/images/github_workshop/octocat_r.png" alt="GitHub's mascot, the Octocat holding the logo of RStudio" width="30%"/>
 </div>
 
 
