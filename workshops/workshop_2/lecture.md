@@ -118,21 +118,36 @@ For this workshop, we will use [GitHub Desktop](https://desktop.github.com/) to 
 There are other alternatives to GitHub, such as— [GitLab](https://about.gitlab.com/), [BitBucket](https://bitbucket.org/), and [SourceForge](https://sourceforge.net/). However, GitHub is the most popular and widely used platform for hosting your project directories. Once you are familiar with GitHub, you will become comfortable using these other platforms as well.
 
 
-### Proposed FAIR work setup with GitHub
+### Integrating GitHub into our workflow
 
-In this workshop, we will integrate GitHub with our existing RStudio-Box work environment from the first workshop, as shown in the diagram below. We will remotely communicate with the GitHub service via the GitHub Desktop software. This is a similar role that was provided by `boxr`, to communicate with Box, in the first workshop.
+In this workshop, we will integrate GitHub with our existing RStudio-Box workflow from the first workshop, as shown in the diagram below. We will store our research code on GitHub by remotely communicating with the GitHub service via the GitHub Desktop software. Here, GitHub Desktop assumes a similar role to `boxr`, used to communicate with Box, in the first workshop.
 
 <div style="display: flex; justify-content: center">
   <img src="images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="50%"/>
 </div>
 
-This setup can be considered as a minimalistic *data commons*. [Data commons "co-locates data with cloud computing infrastructure and commonly used software services, tools & applications for managing, analyzing and sharing data to create an interoperable resource for a research community"](https://medium.com/@rgrossman1/a-proposed-end-to-end-principle-for-data-commons-5872f2fa8a47). In our version of the data commons, we being our own compute (e.g. our laptop). Both the data and the code exists in the cloud, thanks to Box and GitHub.
+This setup can be considered as a minimalistic *data commons*. [Data commons "co-locates data with cloud computing infrastructure and commonly used software services, tools & applications for managing, analyzing and sharing data to create an interoperable resource for a research community"](https://medium.com/@rgrossman1/a-proposed-end-to-end-principle-for-data-commons-5872f2fa8a47). In our version of the data commons, we bring our own compute (e.g. our laptop). Both the data and the code exists in the cloud, thanks to Box and GitHub.
 
 We can immediately see the benefits of this setup. It gives us a flexible framework to plug-and-play with different datasets, while evaluating the same code (i.e. *replicating* studies). It also allows us to plug-and-play with different code solutions for the same problem (i.e. *benchmarking*). For *reproducing* a specific study, we simply need to locate and access a specific data object from Box and the specific code from GitHub.
 
 ### How does Git & GitHub help achieve FAIRness?
 
+Git & GitHub help us achieve FAIRness in the following ways—
 
+- **Findable**: GitHub assigns a unique and persistent URL for each software source code (and its versions) that we store there. Both the code and the metadata is co-located at the URL. This allows us to locate a specific version of our code using the URL associated with it using the browser or via the GitHub Desktop.
+
+<div style="display: flex; justify-content: center">
+  <img src="images/github_findable.png" alt="GitHub interface showing that it assigns a unique URL for each source code stored there" width="90%"/>
+</div>
+
+- **Accessible**: GitHub allows project owners to control who can access our code. We can share our code with specific users, a group of users, or the world. We can also revoke access to our code from specific users at any time. Those with permissions can securely access our code.
+
+<div style="display: flex; justify-content: center">
+  <img src="images/github_accessible.png" alt="GitHub interface showing how to grant and revoke permissions to each project stored there. " width="90%"/>
+</div>
+
+- **Interoperable**: the software we develop should be written using open-source languages, such as— R, Python, and JavaScript. We must not use proprietary languages, such as— MATLAB, SAS, and Stata— which would require the users to have the necessary license to run our code. Our software development environment should also be open-source, such as— RStudio. RStudio allows the users to run your code on any major operating system— Windows, Mac, and Linux.
+- **Reusable**: by ensuring that our code is Findable, Accessible, and Interoperable using GitHub, we ensure that our code is Reusable. This is because the users can now easily locate, access, and run our code. This allows them to reproduce our results and/or replicate our findings.
 
 
 ## Conclusion
