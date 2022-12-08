@@ -3,7 +3,13 @@ layout: page
 permalink: workshops/workshop_2
 ---
 
-### Using GitHub
+### Introduction to GitHub
+
+<div style="display: flex; justify-content: center">
+  <img src="../../assets/images/github_workshop/octocat_r.png" alt="GitHub's mascot, the Octocat holding the logo of RStudio" width="30%"/>
+</div>
+
+
 This is the second in a series of FAIR workshops provided by the Trans-Divisional Research Program. This workshop will provide instruction and hands-on experience with using GitHub to support FAIR practices for epidemiology research.
         	Participants will receive an overview of GitHub and GitHub Desktop, including integrating RStudio with GitHub. Attendees will practice:
 - 	Creating local and remote repositories
