@@ -9,6 +9,6 @@ menubar_toc: true
 
 
 
-## To be updated with lecture notes
+## The lecture notes can be downloaded [here](lecture_assets/Box_Rstudio_Workshop_slides.pdf)
 ---
 
