@@ -3,7 +3,7 @@
   dropdown:
     - name: 'Using RStudio with Box'
       link: /workshops/workshop_1
-    - name: 'Using GitHub'
+    - name: 'Introduction to GitHub'
       link: /workshops/workshop_2
 - name: Instructors
   link: /instructors

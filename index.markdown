@@ -19,7 +19,7 @@ The Trans-Divisional Research Program FAIR workshop will provide DCEG researcher
 ### Workshops
 
 #### Upcoming Workshops 
-- [Using GitHub](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_2), Date: Dec 14, 2022
+- [Introduction to GitHub](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_2), Date: Dec 14, 2022
 - Data Harmonization, Date: To be announced
  
 ---
