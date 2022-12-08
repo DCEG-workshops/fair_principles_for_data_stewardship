@@ -34,7 +34,7 @@ There are several motivations to make our research practices more FAIR—
 ## FAIR principles
 
 <div style="display: flex; justify-content: center">
-  <img src="{{ site.baseurl }}/assets/images/github_workshop/fair_principles.png" alt="Expansion and description of the acronym FAIR" width="75%"/>
+  <img src="images/fair_principles.png" alt="Expansion and description of the acronym FAIR" width="75%"/>
 </div>
 
 In the following definitions, *users* can refer to both yourself and others who want to use or extend your work.
@@ -56,30 +56,30 @@ We shall now see how RStudio, Box, Git, and GitHub helps us adhere to these prin
 
 ## Box
 
+[Box](https://www.box.com/) is a cloud-based file storage service and collaboration platform. It is a great tool to store and share your research data. 
+
+[In the first workshop of the FAIR workshop series](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_1), we showed how to incorporate Box within our RStudio work environment as shown in the diagram below. We remotely (from your computer to where Box is located on the internet) communicated with the Box service via [the R library `boxr`](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html).
+
 <div style="display: flex; justify-content: center">
-  <img src="{{ site.baseurl }}/assets/images/github_workshop/box_api.png" alt="Diagram showing your laptop communicating with Box via HTTP" width="50%"/>
+  <img src="images/box_api.png" alt="Diagram showing your computer communicating with Box via HTTP" width="35%"/>
 </div>
 
-### What is Box?
-
-[Box](https://www.box.com/) is a cloud-based file storage service and collaboration platform. It is a great tool to store and share your research data. This was the topic covered in our [first workshop in the FAIR workshop series](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_1). 
+The `boxr` library is built on top of the Box API. The Box API allows us to interact with Box programmatically. This means that we can write R scripts to upload our data on Box, retrieve it, modify it (while keeping track of all versions of the data), and/or selectively share it with others. We can also revoke access to our data from specific users at any time.
 
 ### How does Box help achieve FAIRness?
 
-In the first workshop, we used [the R library `boxr`](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html) to communicate with Box. This library is built on top of the Box API. The Box API allows us to interact with Box programmatically. This means that we can write R scripts to upload our data on Box, retrieve it, modify it (while keeping track of all versions of the data), and/or selectively share it with others. We can also revoke access to our data from specific users at any time.
-
-We achieved FAIRness by using Box to store and share our research data and by using the `boxr` library to interact with Box. Specifically, we achieved FAIRness in the following ways—
+We achieved FAIRness by using Box to store and share our research data and by using the `boxr` library to interact with Box. Specifically, we achieved FAIRness as follows—
 
 - **Findable**: Box assigns a unique and persistent URL to each data object, and all its versions, stored in Box. Those with permissions can use this URL to access the data object from anywhere in the world. In the first workshop, we were able to access a specific data object stored in Box using the unique URL associated with it from RStudio via `boxr`.
 
 <div style="display: flex; justify-content: center">
-  <img src="{{ site.baseurl }}/assets/images/github_workshop/box_findable.png" alt="Box interface showing that it assigns a unique URL for each object stored there" width="50%"/>
+  <img src="images/box_findable.png" alt="Box interface showing that it assigns a unique URL for each object stored there" width="90%"/>
 </div>
 
 - **Accessible**: Box allows directory owners to control who can access their data objects. We can share our data objects with specific users, a group of users, or the entire world. We can also revoke access to our data objects from specific users at any time. We can grant users granular permissions to our data objects. For example, we can grant some users the ability to view our data objects, but not to modify them. In the first workshop, we used `boxr` to access only those files from Box that each of us had permissions for.
 
 <div style="display: flex; justify-content: center">
-  <img src="{{ site.baseurl }}/assets/images/github_workshop/box_accessible.png" alt="Box interface showing how to grant and revoke granular permissions to each data object stored there. " width="50%"/>
+  <img src="images/box_accessible.png" alt="Box interface showing how to grant and revoke granular permissions to each data object stored there. " width="90%"/>
 </div>
 
 - **Interoperable**: the data objects we store in Box should be in open standard formats, such as— CSV, JSON, XML, and RDF. We must not store the data objects in proprietary formats, such as— Microsoft Excel, Microsoft Word, or Adobe PDF— which would require the users to have the necessary license and specialized tools to read these formats. This creates a hurdle in interoperability because the users do not have a straightforward way to combine your data objects with elements from other data.
@@ -96,11 +96,17 @@ We achieved FAIRness by using Box to store and share our research data and by us
 ## Conclusion
 
 <div style="display: flex; justify-content: center">
-  <img src="{{ site.baseurl }}/assets/images/github_workshop/closing_meme.png" alt="A meme based on the Disney movie Snow White about Box and GitHub users being the FAIRest ones of all" width="50%"/>
+  <img src="images/closing_meme.png" alt="A meme based on the Disney movie Snow White about Box and GitHub users being the FAIRest ones of all" width="80%"/>
 </div>
 
-## References
+## Additional resources
 1. [García-Closas, Montserrat, et al. "Moving towards FAIR practices in epidemiological research." arXiv preprint arXiv:2206.06159 (2022).](https://arxiv.org/abs/2206.06159)
+2. [YouTube series introducing Git and GitHub to absolute beginners](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV).
+3. [Git's official web book introducing Git and GitHub](https://git-scm.com/book/en/v2)
+4. [GitHub's official guide to using Git and GitHub](https://docs.github.com/en/get-started/quickstart/set-up-git).
+5. [GitHub's official guide to using GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop).
+6. [A web book introducing Git and GitHub to RStudio users](https://happygitwithr.com/).
+
 
 
 
