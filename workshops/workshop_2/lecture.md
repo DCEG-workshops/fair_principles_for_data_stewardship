@@ -197,13 +197,18 @@ Code metadata is different from the metadata associated with data. Code metadata
 - **Wiki**: a web page that provides additional detailed information about the project. This information includes the project history, the project roadmap, and the project FAQ.
 - **Contributors**: a list of all the users who have contributed to the project. This information includes the username, the user email, and the specific user contributions. Here, we see how GitHub helps track code provenance.
 - **Usage statistics**: *Watch* tracks the number of users actively following the project for developments. *Star* tracks the number of users who like the project. *Fork* tracks the number of users who have copied the project to their own GitHub account. *Issues* tracks the number of users who have reported bugs or requested features. *Pull requests* tracks the number of users who have contributed to the project. Here, we see how GitHub helps track code usage.
-- **CITATION files**: a plain text file that describes how to cite the project. you can use this to provide link to the paper that describes the project. This can be written in in APA or BibTeX format. [Click here to learn more about GitHub CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
+- **CITATION files**: a plain text file that describes how to cite the project. you can use this to provide link to the paper that describes the project. This can be written in APA or BibTeX format. [Click here to learn more about GitHub CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
 
 The figure below shows the GitHub web interface of the R library `ggplot2`. Here, we can see how well GitHub integrated the code metadata along with the source code.
 
 <div style="display: flex; justify-content: center">
   <img src="images/github_metadata.png" alt="GitHub interface showing how code metadata is integrated with the code. " width="90%"/>
 </div>
+
+
+#### GitHub Organization
+
+
 
 
 ### Conclusion
