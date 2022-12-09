@@ -206,9 +206,20 @@ The figure below shows the GitHub web interface of the R library `ggplot2`. Here
 </div>
 
 
-#### GitHub Organization
+#### GitHub organizations
 
+GitHub organizations are a special type of GitHub accounts that do not belong to individual developers but instead shared by a team of developers. 
 
+This team or _organization_ could be a— 
+- **Research lab**: [episphere](https://github.com/episphere) is a research group led by [Dr. Jonas S. Almeida](https://dceg.cancer.gov/about/staff-directory/almeida-jonas).
+- **Collaboration**: [DCEG-workshops](https://github.com/DCEG-workshops) is a collaboration of multiple data scientists, epidemiologists, and bio-statisticians at the [DCEG](https://dceg.cancer.gov/).
+- **Department**: [CBIIT](https://github.com/CBIIT) is a department at the [National Cancer Institute](https://www.cancer.gov/).
+- **Institute**: [National Cancer Institute](https://github.com/NCIP) is an institute at the [National Institutes of Health](https://www.nih.gov/).
+- **Agency**: National Institutes of Health is an agency at the [United States Department of Health and Human Services](https://www.hhs.gov/).
+
+GitHub Organization allows teams to collaboratively develop and manage multiple software projects towards some common goal. For example, a research lab often has a focussed problem(s) of interest, the National Cancer Institute at Rockville as an organization has a common goal towards precision prevention of cancer. If you build a GitHub organization for a subdomain in science, say, detection of mutational signatures, then that organization effectively acts as a data commons for the subdomain.
+
+[Click here to learn more about creating and managing GitHub orgnizations](https://docs.github.com/en/organizations).
 
 
 ### Conclusion
