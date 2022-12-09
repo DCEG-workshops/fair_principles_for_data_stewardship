@@ -24,7 +24,7 @@ menubar_toc: true
 
 There are several motivations to make our research practices more FAIR—
 
-- To make our research resources easy to share and be reused by our target audience (and our selves), with appropriate credits for our contributions.
+- To make our research resources easy to share and be reused by our target audience (and ourselves), with appropriate credits for our contributions.
 - To make our research findings reproducible and replicable.
   - *Reproducibility* is the ability to use the same data and the same code that you used, to obtain the same findings that you did.
   - *Replicability* is the ability to use the same code that you used but on a different yet related dataset, to obtain findings that are similar to yours.
@@ -34,7 +34,7 @@ There are several motivations to make our research practices more FAIR—
 ### FAIR principles
 
 <div style="display: flex; justify-content: center">
-  <img src="images/fair_principles.png" alt="Expansion and description of the acronym FAIR" width="90%"/>
+  <img src="./images/fair_principles.png" alt="Expansion and description of the acronym FAIR" width="90%"/>
 </div>
 
 In the following definitions, *users* can refer to both yourself and others who want to use or extend your work.
@@ -61,7 +61,7 @@ We shall now see how RStudio, Box, Git, and GitHub helps us adhere to these prin
 [In the first workshop of the FAIR workshop series](https://dceg-workshops.github.io/fair_principles_for_data_stewardship/workshops/workshop_1), we showed how to incorporate Box within our RStudio work environment as shown in the diagram below. We remotely (from your computer to where Box is located on the internet) communicated with the Box service via [the R library `boxr`](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html).
 
 <div style="display: flex; justify-content: center">
-  <img src="images/box_api.png" alt="Diagram showing your computer communicating with Box via HTTP" width="50%"/>
+  <img src="./images/box_api.png" alt="Diagram showing your computer communicating with Box via HTTP" width="50%"/>
 </div>
 
 The `boxr` library is built on top of the Box API. The Box API allows us to interact with Box programmatically. This means that we can write R scripts to upload our data on Box, retrieve it, modify it (while keeping track of all versions of the data), and/or selectively share it with others. We can also revoke access to our data from specific users at any time.
@@ -73,13 +73,13 @@ We achieved FAIRness by using Box to store and share our research data and by us
 - **Findable**: Box assigns a unique and persistent URL to each data object, and all its versions, stored there. Those with permissions can use this URL to access the data from anywhere in the world. In the first workshop, we programmatically accessed (from RStudio via `boxr`) a specific data object stored in Box, that we were granted permissions to, using the unique URL assigned to it by Box. In the figure below, we can see Box's web interface. The unique and persistent URLs assigned by Box to each data object (and its versions) are highlighted in red.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/box_findable.png" alt="Box interface showing that it assigns a unique URL for each object stored there" width="90%"/>
+  <img src="./images/box_findable.png" alt="Box interface showing that it assigns a unique URL for each object stored there" width="90%"/>
 </div>
 
 - **Accessible**: Box allows directory owners to control who can access their data objects. We can share our data with specific users, a group of users, or the entire world. We can also revoke access to our data from specific users at any time. We can grant users granular permissions to our data. For example, we can grant some users the ability to view our data, but not to modify them. In the first workshop, we used `boxr` to access only those files from Box that each of us had permissions for. In the figure below, we can see the parts of Box's web interface that allows us to control who can access our data.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/box_accessible.png" alt="Box interface showing how to grant and revoke granular permissions to each data object stored there. " width="90%"/>
+  <img src="./images/box_accessible.png" alt="Box interface showing how to grant and revoke granular permissions to each data object stored there. " width="90%"/>
 </div>
 
 - **Interoperable**: the data objects we store in Box should be in open standard formats, such as— CSV, JSON, XML, and RDF. We must not store the data objects in proprietary formats, such as— Microsoft Excel, Microsoft Word, or Adobe PDF— which would require the users to have the necessary license and specialized tools to read these formats. This creates a hurdle in interoperability because the users do not have a straightforward way to combine our data objects with elements from their data.
@@ -123,7 +123,7 @@ There are other alternatives to GitHub, such as— [GitLab](https://about.gitlab
 In this workshop, we will integrate GitHub with our existing RStudio-Box workflow from the first workshop, as shown in the diagram below. We will store our research code on GitHub by remotely communicating with the GitHub service via the GitHub Desktop software. Here, GitHub Desktop assumes a similar role to `boxr`, used to communicate with Box, in the first workshop.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="90%"/>
+  <img src="./images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="90%"/>
 </div>
 
 This setup can be considered as a minimalistic *data commons*. [Data commons "co-locates data with cloud computing infrastructure and commonly used software services, tools & applications for managing, analyzing and sharing data to create an interoperable resource for a research community"](https://medium.com/@rgrossman1/a-proposed-end-to-end-principle-for-data-commons-5872f2fa8a47). In our version of the data commons, we bring our own compute (e.g. our laptop) instead of utilizing cloud compute resources. Both the data and the code exists in the cloud, and they are Findable, Accessible, and Interoperable thanks to Box and GitHub.
@@ -176,13 +176,13 @@ Git & GitHub help us achieve FAIRness in the following ways—
 - **Findable**: GitHub assigns a unique and persistent URL for each software project source code (and its versions) that we store there. Both the code and the metadata is co-located at the URL. GitHub allows us to locate a specific version of our code, using the URL GitHub assigns to it, using either the browser or GitHub Desktop. The figure below shows the GitHub web interface for a popular R library `ggplot2`. The unique URL assigned by GitHub to this project is: [https://github.com/tidyverse/ggplot2](https://github.com/tidyverse/ggplot2).
 
 <div style="display: flex; justify-content: center">
-  <img src="images/github_findable.png" alt="GitHub interface showing that it assigns a unique URL for each source code stored there" width="90%"/>
+  <img src="./images/github_findable.png" alt="GitHub interface showing that it assigns a unique URL for each source code stored there" width="90%"/>
 </div>
 
 - **Accessible**: GitHub allows project owners to control who can access our code. We can share our code with specific users, a group of users, or the world. We can also revoke access to our code from specific users at any time. Those with permissions can securely access our code. The figure below shows the GitHub Desktop interface for assigning permissions for a specific project. Here, the project owner has chosen to keep the project private for now. They may later make this project public if they are ready to share it with the world.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/github_accessible.png" alt="GitHub interface showing how to grant and revoke permissions to each project stored there. " width="90%"/>
+  <img src="./images/github_accessible.png" alt="GitHub interface showing how to grant and revoke permissions to each project stored there. " width="90%"/>
 </div>
 
 - **Interoperable**: the software we develop should be written using open-source languages, such as— R, Python, and JavaScript. We must not use proprietary languages, such as— MATLAB, SAS, and Stata— which would require our users to have the necessary license to run our code. Our software development environment should also be open-source, such as— RStudio. RStudio allows the users to run your code on any major operating system— Windows, Mac, and Linux.
@@ -202,7 +202,7 @@ Code metadata is different from the metadata associated with data. Code metadata
 The figure below shows the GitHub web interface of the R library `ggplot2`. Here, we can see how well GitHub integrated the code metadata along with the source code.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/github_metadata.png" alt="GitHub interface showing how code metadata is integrated with the code. " width="90%"/>
+  <img src="./images/github_metadata.png" alt="GitHub interface showing how code metadata is integrated with the code. " width="90%"/>
 </div>
 
 
@@ -223,7 +223,7 @@ However, we recognize that everyone's research setup is different and has differ
 In our experience, the FAIR principles are hard to grasp but it helps a lot to discuss them in an open forum. We hope that you will join us in our journey to make all of our research resources FAIRer! 😊
 
 <div style="display: flex; justify-content: center">
-  <img src="images/closing_meme.png" alt="A meme based on the Disney movie Snow White about Box and GitHub users being the FAIRest ones of all" width="80%"/>
+  <img src="./images/closing_meme.png" alt="A meme based on the Disney movie Snow White about Box and GitHub users being the FAIRest ones of all" width="80%"/>
 </div>
 
 ### Additional resources

@@ -14,11 +14,25 @@ menubar_toc: true
 
 Welcome to the practicum section of the "Introduction to GitHub" workshop!
 
+As a researcher and a programmer you wear several hats. You are a—
+- **Creator**: you solve research problems, and provide these solutions to the public.
+- **Consumer**: you use other people's code to either reproduce or replicate their findings.
+- **Contributor**: you contribute to the code of others by adding new features, fixing bugs, or improving their documentation.
+- **Project manager**: you manage the development of a software project that includes your own code, and the code from others (your team, your collaborators, and open source contributors from the public).
 
+For each role, Git & GitHub provides you with a specialized set of features to help you better achieve your goals. In this practicum, you will learn how to use Git & GitHub to play the role of a _Creator_ and a _Consumer_. If you scroll further down this document, we show you how to also play the roles of a _Contributor_ and a _Project manager_. 
+
+The figure below summarizes the task ahead. 
 
 <div style="display: flex; justify-content: center">
-  <img src="images/practicum_overview.png" alt="" width="90%"/>
+  <img src="./images/practicum_overview.png" alt="h" width="90%"/>
 </div>
+
+As a **creator**, you will create a local directory for a project in your computer. This can either be an empty directory for a new project or an existing project that you have already been working on. We will then create a copy of this project remotely on GitHub. This step will instantly make our work significantly FAIRer, and we shall see how. You will then continue to make changes to the project files locally as you always do but then also update these changes to the remote copy of your project on GitHub. 
+
+As a **consumer**, you will _clone_ (similar to a download but empowered with Git features) a remote copy of a project that you like to your computer. You will then run the cloned code locally in your computer.
+
+As you walk through this practicum, please pay a special attention to how each of these steps help you achieve FAIRness.
 
 ## Creator workflow
 
