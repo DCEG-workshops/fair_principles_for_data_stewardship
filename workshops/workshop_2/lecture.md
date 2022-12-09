@@ -123,7 +123,7 @@ There are other alternatives to GitHub, such as— [GitLab](https://about.gitlab
 In this workshop, we will integrate GitHub with our existing RStudio-Box workflow from the first workshop, as shown in the diagram below. We will store our research code on GitHub by remotely communicating with the GitHub service via the GitHub Desktop software. Here, GitHub Desktop assumes a similar role to `boxr`, used to communicate with Box, in the first workshop.
 
 <div style="display: flex; justify-content: center">
-  <img src="images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="50%"/>
+  <img src="images/data_commons.png" alt="Diagram showing your computer communicating with both Box and GitHub via HTTP" width="90%"/>
 </div>
 
 This setup can be considered as a minimalistic *data commons*. [Data commons "co-locates data with cloud computing infrastructure and commonly used software services, tools & applications for managing, analyzing and sharing data to create an interoperable resource for a research community"](https://medium.com/@rgrossman1/a-proposed-end-to-end-principle-for-data-commons-5872f2fa8a47). In our version of the data commons, we bring our own compute (e.g. our laptop) instead of utilizing cloud compute resources. Both the data and the code exists in the cloud, and they are Findable, Accessible, and Interoperable thanks to Box and GitHub.
