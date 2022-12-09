@@ -25,7 +25,7 @@ For each role, Git & GitHub provides you with a specialized set of features to h
 The figure below summarizes the task ahead. 
 
 <div style="display: flex; justify-content: center">
-  <img src="./images/practicum_overview.png" alt="h" width="90%"/>
+  <img src="{{ site.baseurl }}/workshops/workshop_2/images/practicum_overview.png" alt="Diagram depicting the communication between your computer and GitHub for the creator and the consumer roles." width="90%"/>
 </div>
 
 As a **creator**, you will create a local directory for a project in your computer. This can either be an empty directory for a new project or an existing project that you have already been working on. We will then create a copy of this project remotely on GitHub. This step will instantly make our work significantly FAIRer, and we shall see how. You will then continue to make changes to the project files locally as you always do but then also update these changes to the remote copy of your project on GitHub. 
