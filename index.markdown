@@ -28,6 +28,6 @@ The Trans-Divisional Research Program FAIR workshop will provide DCEG researcher
 
 
 ### FAIR resources
-- Our [paper](https://jonasalmeida.github.io/preprints/Montserrat_Garcia-Closas_2022_Moving_Towards_FAIR_preprint.pdf) on Moving towards FAIR practices in epidemiological research 
+- Our [paper](https://arxiv.org/abs/2206.06159) on moving towards FAIR practices in epidemiological research 
 - We  have FAIR weekly office hours every Friday 11:00-12:00, anyone is welcome to join, please check out the website at [episphere.github.io/fair/](https://episphere.github.io/fair/)
 - We also welcome any FAIR related discussions at the [FAIR gitter channel](https://gitter.im/episphere/Fair)
