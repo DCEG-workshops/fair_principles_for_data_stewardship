@@ -34,7 +34,67 @@ As you walk through this practicum, please pay a special attention to how each o
 
 ## Creator workflow
 
+When playing the role of a creator, researchers solve a problem of scientific interest and provide the solution to the public. This solution is typically in form of a scientific publication along with a software package, and some data for demonstration and easy verification.
+
+The following steps are the typical workflow of a creator—
+1. Create a local directory for the project.
+2. Create a remote copy of the project on GitHub.
+3. Make changes to the project files as you solve the various sub-problems that contribute towards solving the overall solution.
+
+Let us now walk through each of these steps in detail.
+
 ### Step 1: Create a local Git repository
+
+
+#### Create a local directory
+For this practicum, please create a new directory on your computer (i.e. a _local_ directory). You can name it anything you like. For example, you can name it `my-project`. We recommend that you use the [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/) for naming your project directories. This is because kebab-case is the most common naming convention for software packages in the world. They come from the Unix world, and are commonly used by the R, Python, and JavaScript programming communities to distribute software.
+
+Note that outside of this workshop, in the real-world use case, you may already have some project directories in your computer that you are looking to make FAIRer. It could be a project that you are currently working on or a project that you worked on in the past. In this case, instead of creating a new directory, you can start with that directory. For this workshop, we will assume that you are starting with a new directory.
+
+**<span style="color: red;">!! WARNING !!</span>**: never put anything sensitive in the directory that you plan to put on GitHub. This is not a good coding practice! Sensitive information includes research data that your data sharing policy forbids from sharing with the public, API keys, authentication tokens, and SSH keys. Anything that you cannot share with the public. Especially when you are looking to move an existing directory into GitHub in order to make it FAIRer, <u>please remove all sensitive information from this directory before you proceed to the next step</u>. Despite GitHub offering private repositories, coding repositories are not the place to put such information. For research data, in accordance with the data sharing policy, please use Box.com and access it from your code via the [`boxr` package](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html). Despite you sharing this code with the public, only those users with permissions will be able to ingest the data in Box. If the data sharing policy forbids using Box, create a separate directory in your computer, away from your source code directories, for your data. For API keys, please use environment variables. For authentication tokens and SSH keys, please use a password manager. 
+
+#### Initialize the local directory as a Git repository
+Your empty project directory is not yet a Git repository i.e., the Git software in your computer is not currently tracking all the changes that will be made in this directory. 
+
+To ask the Git software to track changes in this directory, open GitHub Desktop. Select `File > Add Local Repository...`. Click `Choose...` and locate your project directory. Alternatively, you can simply drag-and-drop your project directory into the GitHub Desktop window. Don't click anything yet and simply observe the message on GitHub Desktop. You will see a window that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_1_a.png" alt="GitHub Desktop pop-up indicating that the selected folder is not a Git repository and offering an option to create a repository" width="50%"/>
+</div>
+
+The pop-up says "This directory does not appear to be a Git repository, Would you like to `create a repository` here instead?". If dragged in a directory that was already a Git repository, you would not receive this message. Click the link `create a repository`. You should see a new pop-up window that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_1_b.png" alt="GitHub Desktop pop-up window asking for information to create a new repository" width="50%"/>
+</div>
+
+Fill the information as follows—
+- **Name**: the name of your project. It should be pre-populated with the name of the directory you just created. For example, `my-project`.
+- **Description**: a short description of your project. This is optional.
+- **Local Path**: the path to your project directory. This should be also pre-populated with the path to your project directory. For example, `/Users/username/my-project`.
+- **☑ Initialize this repository with a README**: keep this option checked. This will create a `README.md` file in your project directory. This file is a standard file that is used to describe the project. This is the first file that the users of your code will see. This file should contain all information required to correctly run your code. You can read more about it [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes). 
+  - This step is our first encounter with GitHub's adherence towards FAIR principles. The `README.md` file is a type of metadata associated with code. GitHub offers to create this file automatically for you.
+- **Git Ignore**: This file is a standard file that is used to tell Git which files to ignore. This is useful because you may have some files in your project directory that you do not want Git to track. For example, you may have some large files that you do not want to upload to GitHub. You can read more about it [here](https://docs.github.com/en/github/using-git/ignoring-files).
+  - Click the drop-down box and select the main programming language that you plan to develop your source code in. For this workshop, we will select `R`. This will automatically populate the `Git Ignore` file with the standard set of files that you typically do not want to track in your Git repository. For example, it will ignore all files with the extension `.RData` and `.Rhistory`.
+  - **<span style="color: red;">!! WARNING !!</span>**: again, please do not use this file to ignore sensitive files. Sensitive files should not be in your Git repository in the first place. Please read the warning message in the previous subsection for more details. Git ignore is only for extraneous files that are not necessary for users to run your code.
+- **License**: This is a standard file that is used to describe the license under which your code is released. This is important because it tells the users of your code how they can use your code. For example, you may want to release your code under the [MIT license](https://opensource.org/licenses/MIT) which allows the users to use your code for any purpose, including commercial purposes. You can read more about it [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository). To learn about other open source license options, click [here](https://choosealicense.com/).
+  - The choice here mainly depends upon the data sharing policy of your project. Please consult with your supervisor to determine the appropriate license for your project.
+  - **Note**: Failure to specify a license defaults your project to a very restrictive license. Users are not free to do anything with your code without fear of litigation. This would discourage developers from using or improving your code. Such projects don't gain any traction within the developer community and are often doomed. So, please specify a license.
+  - For this workshop, we will select `MIT License`. This will automatically populate the `License` file with the standard text of the MIT license. Click the drop-down box and select the license that you plan to release your code under.
+  - This step is our second encounter with GitHub's adherence towards FAIR principles. Specifying a license improves the _Findability_ (code metadata is co-located with the code), _Accessibility_ (the `License` file is used to govern how others can use your code), and _Interoperability_ (open source licenses does not create a licensing hurdle for your users and allow them to build upon your work) of your code
+
+The populated window should look like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_1_c.png" alt="GitHub Desktop pop-up window to create a new repository but with all the information filled-in" width="50%"/>
+</div>
+
+Click `Create Repository`. The GitHub Desktop window should now look like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_1_d.png" alt="GitHub Desktop window of the new repository" width="90%"/>
+</div>
+
 
 ```r
 ###########################
