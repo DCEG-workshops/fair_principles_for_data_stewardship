@@ -98,8 +98,10 @@ Click `Create Repository`. The GitHub Desktop window should now look like thisâ€
 You have now created a local git repository. This means that the Git software in your computer is now tracking all the changes that will be made in this directory.
 
 <div style="display: flex; justify-content: center">
-  <img src="./images/creator_1.png" alt="Overall workflow diagram showing the creation of a local git repository" width="90%"/>
+  <img src="./images/creator_1.png" alt="Overall workflow diagram showing the creation of a local git repository" width="50%"/>
 </div>
+
+If you go to your project directory, you will see that two new files were createdâ€” `README.md` and `LICENSE`. Another hidden file, `.gitignore`, is created that will keep a list of all the files to not track by Git. You can open these files in a text editor to see their contents. 
 
 ### Step 2: Create a remote copy of your local Git repository
 
@@ -150,6 +152,10 @@ This is the remote copy of your local Git repository. Notice the URL assigned by
 Also, note in the bottom of the page, you can see the `README.md` file is co-located with the source code from the same URL. This again improves the _Findability_ of your code. All information that the users need to run your code would be contained in this `README.md` file.
 
 ### Step 3: the Git workflow
+
+Open RStudio. Select `File > Open Project`. Navigate to the project directory that we created in the previous steps. Select the project directory and click `Open`. This will open the project in RStudio. This step would also create R's virtual environment `.Rproj` file in the project directory. This file is used to keep track of the R packages that are used in the project. In our example so far, `my-project.Rproj` was created in my project directory.
+
+Create a new file within your project directory. This will be an R script. You can name anything you like, for example, `exploratory_data_analysis.R`. Copy the code below and paste it in the R script that you just created. Save the file.
 
 ```r
 ###########################
@@ -224,6 +230,33 @@ legend("topright",
        pch=15 )
 
 ```
+
+Execute the commands in the script. Let us take a closer look at what each line of code does.
+
+#### FAIR data
+
+In the initial few lines, we get to review some concepts from the first workshop.
+
+The code below installs the `boxr` package if you don't have it installed already. It then loads the `boxr` package. Recollect from the first workshop. We use `boxr` to communicate with Box. This is similar to GitHub Desktop, which is communicating with GitHub on our behalf.
+
+```r
+install.packages("boxr")
+library(boxr)
+```
+
+The code below authenticates your RStudio with your Box account. If you are not already logged into Box after running this code, you may be asked to log into Box. Identify Box as your hard disk in the cloud.
+
+```r
+box_auth(client_id = "627lww8un9twnoa8f9rjvldf7kb56q1m",
+         client_secret = "gSKdYKLd65aQpZGrq9x4QVUNnn5C8qqm") 
+```
+
+The terms `client_id` and `client_secret` might cause you some anxiety. Secrets are not supposed to be shared. Don't worry, you are free to share `client_id` and `client_secret` with anyone. They are not secrets. They are just identifiers that are used to locate Box.com web servers on the internet. Think of them as the address to the gate-keepers of Box. Only those with a Box account are let in. That is why you were asked to log-in. Those without an account are driven away. 
+
+Also, if you share the `client_id` and `client_secret` with someone, they won't magically gain access to your data. They will only have access to the data that they already had access to. 
+
+Another thing to remember about them is that the `client_id` and `client_secret` remains the same for any project that involves data in Box. Again, it is merely the address to the gate-keepers of Box. It is not the address to your data. So, feel free to re-use this code snippet for other projects that involves data in Box.
+
 
 ## Consumer workflow
 
