@@ -95,6 +95,61 @@ Click `Create Repository`. The GitHub Desktop window should now look like this�
   <img src="./images/creator_1_d.png" alt="GitHub Desktop window of the new repository" width="90%"/>
 </div>
 
+You have now created a local git repository. This means that the Git software in your computer is now tracking all the changes that will be made in this directory.
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_1.png" alt="Overall workflow diagram showing the creation of a local git repository" width="90%"/>
+</div>
+
+### Step 2: Create a remote copy of your local Git repository
+
+In this step, we will upload a copy of your local Git repository to the GitHub servers. This will create a remote copy of your local Git repository. This remote copy will make your code locatable and accessible, from anywhere in the world, by those with appropriate permissions and an internet access. It can be used to share your code with the world.
+
+To do this, click on the `Publish Repository` button in the top-right corner of the GitHub Desktop window. See the button circled in red.
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_a.png" alt="GitHub Desktop window with Publish repository button highlighted" width="90%"/>
+</div>
+
+This will open a new pop-up window that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_b.png" alt="GitHub Desktop pop-up window to publish repository" width="50%"/>
+</div>
+
+The window is pre-populated for the project `Name` and `Description`. Additionally, it gives us an option: `☑ Keep this code private`. You can check the box to keep your repository **Private**. If you choose to do so, only you will have access to your code on GitHub. You can choose to add a few collaborators later. If you do that, only you and your collaborators will have access to the code. You can later choose to make the repository **Public**, when you are ready. For this workshop, let us remove the check mark from the box, implying that we want our code repository to be **Public**. You can select a GitHub `Organization` that you may be part of in case your project is a repository in that organization. Please review lecture notes if you are unfamiliar with GitHub organizations. Click `Publish Repository`.
+
+The pop-up window should now look like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_c.png" alt="GitHub Desktop pop-up window to publish repository with information filled-in" width="50%"/>
+</div>
+
+Notice how the `Publish Repository` button in the top-right corner of your window has now changed to `Fetch origin`. 
+
+Please go to https://github.com/ on your web browser, log into your account, and check if the remote repository has indeed been created. In the GitHub website, you can do so by clicking on your profile icon in the top-right corner of the website, then click on `Your repositories`. My GitHub page looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_d.png" alt="GitHub web page with the link to your repositories" width="90%"/>
+</div>
+
+You should see a repository with the name that you specified in the previous step. Click on the repository to open it. You should see a page that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_e.png" alt="GitHub web page with a list of your repositories" width="90%"/>
+</div>
+
+Click the project and take a look at the project page designed by GitHub. You should see a page that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_2_f.png" alt="GitHub web page with the repository details" width="90%"/>
+</div>
+
+This is the remote copy of your local Git repository. Notice the URL assigned by GitHub to your page. It would be of the form: `https://github.com/your-username/your-project-directory-name`. This is a key idea with respect to _Findability_ aspect of the FAIR principles. This persistent and unique URL assigned by GitHub to your project makes it locatable by anyone with permissions.  You can now share this link with your collaborators and other users. They can use this link to _clone_ your repository and make their own local copies of your code to run it or possibly build upon it for collaborative software development.
+
+Also, note in the bottom of the page, you can see the `README.md` file is co-located with the source code from the same URL. This again improves the _Findability_ of your code. All information that the users need to run your code would be contained in this `README.md` file.
+
+### Step 3: the Git workflow
 
 ```r
 ###########################
@@ -169,12 +224,6 @@ legend("topright",
        pch=15 )
 
 ```
-
-### Step 2: Create a remote copy of your local Git repository
-
-
-### Step 3: the Git workflow
-
 
 ## Consumer workflow
 
