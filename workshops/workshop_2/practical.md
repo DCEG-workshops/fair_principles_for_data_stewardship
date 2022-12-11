@@ -300,16 +300,124 @@ The code below authenticates your RStudio with your Box account. If you are not 
 box_auth(client_id = "627lww8un9twnoa8f9rjvldf7kb56q1m",
          client_secret = "gSKdYKLd65aQpZGrq9x4QVUNnn5C8qqm") 
 ```
+
+The sign-in page for Box will look like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/oauth_1.png" alt="Box sign in page" width="50%"/>
+</div>
+
+Once you sign in, you will be redirected to a page that looks like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/oauth_2.png" alt="Box OAuth page" width="50%"/>
+</div>
+
+Please click on the `Grant access to Box` button. This will grant RStudio access to your Box account.
+
 There are a few things to note about `client_id` and `client_secret`—
 - The terms `client_id` and `client_secret` may cause you some anxiety. Secrets are not supposed to be shared. Don't worry, you are free to share `client_id` and `client_secret` with anyone. They are not secrets. They are just identifiers that are used to locate Box.com web servers on the internet. Think of them as the address to the gate-keepers of Box. Only those with a Box account are let in. That is why you were asked to log-in. Those without an account are turned away.
 - If you share the `client_id` and `client_secret` with someone, they won't magically gain access to your data. They will only have access to the data that they are given access to via Box's website.
 - The `client_id` and `client_secret` remains the same for any project that involves data in Box. Again, it is merely the address to the gate-keepers of Box. It is not the address to your data. So, feel free to re-use this code snippet for other projects that involves data in Box.
 
+The code below sets the working directory to the `DCEG GitHub_RStudio_FAIR Workshop` Box folder using the folder ID. This is similar to the `setwd()` function in RStudio, except the command below does this on the remote Box file system. 
+
+```r
+box_setwd(dir_id = )
+```
+
+Please pass the directory ID of the `DCEG GitHub_RStudio_FAIR Workshop` folder to the `dir_id` argument. You can find the directory ID by looking at the URL of the folder on Box's website. See below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_3_d.png" alt="Box folder URL" width="50%"/>
+</div>
+
+If this step is successful, you will see the following message in the console—
+
+```shell
+box.com working directory changed to 'DCEG GitHub_RStudio_FAIR Workshop'
+
+      id: 185773884882
+    tree: All Files/DCEG Box GitHub Workshop - Spring 2021/Github_FAIR Workshop/DCEG GitHub_RStudio_FAIR Workshop
+   owner: garciacm@nih.gov
+contents: 1 files, 0 folders
+```
+
+The code below reads a file in Box into local memory. The `box_read()` function is similar to the `read.csv()` function in RStudio. The difference is that `box_read()` reads the file from the remote Box file system.
+
+```r
+bc_data = box_read(file_id = ) 
+```
+
+The `file_id` argument is the file ID of the `bc_data.csv` file. You can find the file ID by looking at the URL of the file on Box's website. See below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_3_e.png" alt="Box file URL" width="50%"/>
+</div>
+
+If this step is successful, you will see the following message in the console—
+
+```shell
+Remote file '/var/folders/8l/pbcwnq316rz5v5pnyv_sydmn2fsdlk/T//Rtmp6BcKgg/bc_data.csv' read into memory as an object of class data.frame
+```
+
+That's it! You have now set up your very own, minimalistic data commons. See architecture below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/data_commons.png" alt="Data commons architecture" width="90%"/>
+</div>
+
+#### FAIR data analysis
+
+With both FAIR data (from `boxr` and Box) and FAIR code (from GitHub Desktop and GitHub), we are ready to do some FAIR data analysis.
+
+Please run the rest of the code. 
+
+```r
+
+```r
+plot_variable = "BMI" # change here
+n_bins = 50
+
+hist(bc_data[bc_data[["status"]]==1, plot_variable], 
+     breaks=n_bins, prob=TRUE, 
+     col=rgb(1, 0, 0, 0.5), 
+     main=paste0("Distribution of ", plot_variable), 
+     xlab=plot_variable)
+lines(density(bc_data[bc_data[["status"]]==1, plot_variable]), 
+      col="red", lwd=2)
+
+hist(bc_data[bc_data[["status"]]==0, plot_variable], 
+     breaks=n_bins, prob=TRUE,
+     col=rgb(0, 0, 1, 0.5), 
+     add=TRUE)
+lines(density(bc_data[bc_data[["status"]]==0, plot_variable]), 
+      col="blue", lwd=2)
+
+legend("topright", 
+       title="status",
+       legend=c("Case","Control"), 
+       col=c(rgb(1,0,0,0.5), 
+             rgb(0,0,1,0.5)), 
+       pt.cex=1, 
+       cex=0.3, 
+       pch=15 )
+```
+
+It should generate a histogram of the `BMI` variable in the `bc_data` data frame, conditioned on the breast cancer `status` variable. Save the figure in your project directory. You can name the plot anything you like. I am calling it `differential_distribution.png`.
+
+Let's take a look at what all this data analysis has done to our project directory. Go to GitHub Desktop and take a look at the `Changes` tab. You should see something like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_3_f.png" alt="GitHub Desktop changes tab" width="50%"/>
+</div>
+
+Let us complete the Git workflow. We have made our edits. Let us `commit` the changes locally, then `push` the changes to the remote repository. You know what to do!
 
 ## Consumer workflow
 
 ### Adding collaborators
-
+Pull
 
 ### Step 1: Clone a remote Git repository
 
