@@ -198,6 +198,7 @@ Code metadata is different from the metadata associated with data. Code metadata
 - **Contributors**: a list of all the users who have contributed to the project. This information includes the username, the user email, and the specific user contributions. Here, we see how GitHub helps track code provenance.
 - **Usage statistics**: *Watch* tracks the number of users actively following the project for developments. *Star* tracks the number of users who like the project. *Fork* tracks the number of users who have copied the project to their own GitHub account. *Issues* tracks the number of users who have reported bugs or requested features. *Pull requests* tracks the number of users who have contributed to the project. Here, we see how GitHub helps track code usage.
 - **CITATION files**: a plain text file that describes how to cite the project. you can use this to provide link to the paper that describes the project. This can be written in APA or BibTeX format. [Click here to learn more about GitHub CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
+  - For a list of tools that help you create, edit, validate, and convert CITATION files, click [here](https://github.com/citation-file-format/citation-file-format/blob/main/README.md#tools-to-work-with-citationcff-files-wrench).
 
 The figure below shows the GitHub web interface of the R library `ggplot2`. Here, we can see how well GitHub integrated the code metadata along with the source code.
 
@@ -208,7 +209,7 @@ The figure below shows the GitHub web interface of the R library `ggplot2`. Here
 
 #### GitHub organizations
 
-GitHub organizations are a special type of GitHub accounts that do not belong to individual developers but instead shared by a team of developers. 
+GitHub organizations are a special type of GitHub accounts that do not belong to individual developers but instead shared by a team(s) of developers. 
 
 This team or _organization_ could be a— 
 - **Research lab**: [episphere](https://github.com/episphere) is a research group led by [Dr. Jonas S. Almeida](https://dceg.cancer.gov/about/staff-directory/almeida-jonas).
@@ -220,7 +221,6 @@ This team or _organization_ could be a—
 GitHub Organization allows teams to collaboratively develop and manage multiple software projects towards some common goal. For example, a research lab often has a focussed problem(s) of interest, the National Cancer Institute at Rockville as an organization has a common goal towards precision prevention of cancer. If you build a GitHub organization for a subdomain in science, say, detection of mutational signatures, then that organization effectively acts as a data commons for the subdomain.
 
 [Click here to learn more about creating and managing GitHub orgnizations](https://docs.github.com/en/organizations).
-
 
 ### Conclusion
 
