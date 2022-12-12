@@ -374,8 +374,6 @@ With both FAIR data (from `boxr` and Box) and FAIR code (from GitHub Desktop and
 Please run the rest of the code. 
 
 ```r
-
-```r
 plot_variable = "BMI" # change here
 n_bins = 50
 
@@ -409,38 +407,47 @@ It should generate a histogram of the `BMI` variable in the `bc_data` data frame
 Let's take a look at what all this data analysis has done to our project directory. Go to GitHub Desktop and take a look at the `Changes` tab. You should see something like this—
 
 <div style="display: flex; justify-content: center">
-  <img src="./images/creator_3_f.png" alt="GitHub Desktop changes tab" width="50%"/>
+  <img src="./images/creator_3_f.png" alt="GitHub Desktop changes tab" width="90%"/>
 </div>
 
 Let us complete the Git workflow. We have made our edits. Let us `commit` the changes locally, then `push` the changes to the remote repository. You know what to do!
 
+You have now mastered git workflow, which allows you to make changes to your project directory, and then push those changes to the remote repository. This is the essence of version control. You can now go back to any previous version of your project directory. You can also share your project directory with others. This is the essence of collaboration.
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/creator_3.png" alt="Git workflow" width="50%"/>
+</div>
+
 ## Consumer workflow
 
-### Adding collaborators
-Pull
+When playing the role of a consumer, researchers consume other people’s code to either reproduce or replicate their findings.
 
-### Step 1: Clone a remote Git repository
+Specifically, we will learn about—
+1. Cloning a repository.
+2. Asking for help or reporting bugs in a project.
+
+### Clone a remote Git repository
+
+To run someone else's code, we must first _clone_ their remote Git repository on GitHub. This is similar to downloading a file from the internet. The difference is that you are downloading a project directory, which is a collection of files and folders.
+
+To clone a remote Git repository, you must first find the URL of the remote repository. 
+
+You can find the URL by clicking on the `Code` button on the GitHub repository page. See below—
+
+### GitHub issues
+
+GitHub issues are a way to ask questions or report bugs in a project. It is also a place to request new features or suggest improvements to the project. This shows the social networking aspect of GitHub. 
+
+What sets GitHub issues apart from forums like Biostars and StackOverflow is that the issues are attached to the project. This means that the issues are visible to the project maintainers and active users. The project maintainers or active users can then respond to the issues. This is a great way to get help from the project's community. The audience in Biostars and StackOverflow is much more generic and may not be familiar with the project.
+
+To create a new issue, click on the `Issues` tab on the GitHub repository page. See below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/github_issues.png" alt="GitHub issues tab" width="50%"/>
+</div>
+
+Click on the `New issue` button to create a new issue. When reporting a bug, please provide as much information as possible (e.g., the OS you are working on, your virtual environment set up, etc.). This will help the project maintainers to reproduce the bug exactly.
+
+To learn more about GitHub issues, please see [this documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues) .
 
 
-### Git issues
-
-
-## Advanced concepts in GitHub
-
-## Contributor workflow
-
-### Step 1: Fork a remote repository
-
-### Step 2: Clone a remote repository
-
-### Step 3: Create a new branch
-
-### Step 4: the Git workflow
-
-### Step 5: Create a pull request
-
-
-## Project manager workflow
-
-
-### Conflict resolution

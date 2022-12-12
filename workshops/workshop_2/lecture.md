@@ -199,6 +199,7 @@ Code metadata is different from the metadata associated with data. Code metadata
 - **Usage statistics**: *Watch* tracks the number of users actively following the project for developments. *Star* tracks the number of users who like the project. *Fork* tracks the number of users who have copied the project to their own GitHub account. *Issues* tracks the number of users who have reported bugs or requested features. *Pull requests* tracks the number of users who have contributed to the project. Here, we see how GitHub helps track code usage.
 - **CITATION files**: a plain text file that describes how to cite the project. you can use this to provide link to the paper that describes the project. This can be written in APA or BibTeX format. [Click here to learn more about GitHub CITATION files](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files).
   - For a list of tools that help you create, edit, validate, and convert CITATION files, click [here](https://github.com/citation-file-format/citation-file-format/blob/main/README.md#tools-to-work-with-citationcff-files-wrench).
+  - If you run into any errors, please consult the [CITATION file format specification](https://citation-file-format.github.io/assets/pdf/cff-specifications-1.0.0.pdf).
 
 The figure below shows the GitHub web interface of the R library `ggplot2`. Here, we can see how well GitHub integrated the code metadata along with the source code.
 
