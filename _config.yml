@@ -82,7 +82,7 @@ defaults:
     scope:
       path: workshops/workshop_2
     values:
-      title: "Using GitHub"
+      title: "Introduction to GitHub"
       parent: workshops
       nav_order: 2
       tabs: workshop2_tabs
