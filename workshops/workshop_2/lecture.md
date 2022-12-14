@@ -14,8 +14,8 @@ menubar_toc: true
 ## Learning objectives
 
 - Become conversant with the terms— Findable, Accessible, Interoperable, and Reusable (FAIR).
-- Review how Box helped us adhere to the FAIR principles.
-- Learn how Git & GitHub can help us achieve FAIRness.
+- Review how Box helped us adhere to the FAIR principles with respect to data.
+- Learn how Git & GitHub can help us achieve FAIRness with respect to the code/software that we develop.
 - Learn about resources within DCEG to discuss the FAIR principles, and the challenges of applying them to your bespoke research setting.
 
 ## Lecture notes

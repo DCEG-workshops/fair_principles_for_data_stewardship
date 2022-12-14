@@ -26,9 +26,9 @@ The figure below summarizes the task ahead.
   <img src="./images/practicum_overview.png" alt="Diagram depicting the communication between your computer and GitHub for the creator and the consumer roles." width="90%"/>
 </div>
 
-As a _creator_, you will create a local directory for a project in your computer. This can either be an empty directory for a new project or a directory of an existing project that you have already been working on. We will then create a copy of this project remotely on GitHub. This step will instantly make our work significantly FAIRer, and we shall see how. You will then continue to make changes to the project files locally as you always do but then also update these changes to the remote copy of your project on GitHub. 
+As a _creator_, you will create a local directory for a project in your computer. This can either be an empty directory for a new project or a directory of an existing project that you have already been working on. We will then create a copy of this project remotely on GitHub. This step will instantly make our work significantly FAIRer, and we shall see how. You will then continue to make changes to the project files locally as you always do but then also synchronize these changes to the remote copy of your project on GitHub. 
 
-As a _consumer_, you will _clone_ (similar to a download but empowered with Git features) a remote copy of a project that you like to your computer. You will then run the cloned code locally in your computer.
+As a _consumer_, you will _clone_ (similar to a download but empowered with Git's version control features) a remote copy of a project that you like to your computer. You will then run the cloned code locally in your computer.
 
 As you walk through this practicum, please pay a special attention to how each of these steps help you achieve FAIRness.
 
@@ -47,11 +47,11 @@ Let us now walk through each of these steps in detail.
 
 
 #### Create a local directory
-For this practicum, please create a new directory on your computer (i.e. a _local_ directory). You can name it anything you like. For example, you can name it `my-project`. We recommend that you use the [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/) for naming your project directories. This is because kebab-case is the most common naming convention for software packages in the world. They come from the Unix world, and are commonly used by the R, Python, and JavaScript programming communities to distribute software.
+For this practicum, please create a new directory in your computer (i.e. a _local_ directory). You can name it anything you like. For this example, let's call it `my-project`. We recommend that you use the [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/) for naming your project directories. This is because kebab-case is the most common naming convention for software packages in the world. They come from the Unix world, and are commonly used by the R, Python, and JavaScript programming communities to distribute software.
 
 **Note**: outside of this workshop, in the real-world use case, you may already have some project directories in your computer that you are looking to make FAIRer. It could be a project that you are currently working on or a project that you worked on in the past. In this case, instead of creating a new directory, you can start with that directory. For this workshop, we will assume that you are starting with a new directory.
 
-**<span style="color: red;">!! WARNING !!</span>**: never put anything sensitive in the directory that you plan to put on GitHub. This is not a good coding practice! Sensitive information includes research data that your data sharing policy forbids from sharing with the public, API keys, authentication tokens, and SSH keys. Anything that you cannot share with the public. When you are looking to move an existing project directory into GitHub in order to make it FAIRer, <u>please remove all sensitive information from this directory before you proceed to the next step</u>. Despite GitHub offering private repositories, coding repositories are not the place to put such information. For research data, in accordance with the data sharing policy, please use Box.com and access it from your code via the [`boxr` package](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html). Despite you sharing this code with the public, only those users with permissions will be able to ingest the data in Box. If the data sharing policy forbids using Box, create a separate directory in your computer, away from your Git repositories, for your data. For API keys, please use environment variables. For authentication tokens and SSH keys, please use a password manager. 
+**<span style="color: red;">!! WARNING !!</span>**: never put anything sensitive in the directory that you plan to put on GitHub. This is not a good coding practice! Sensitive information includes research data that your data sharing policy forbids from sharing with the public, API keys, authentication tokens, and SSH keys. Anything that you cannot share with the public. When you are looking to move an existing project directory into GitHub in order to make it FAIRer, <u>please remove all sensitive information from this directory before you proceed to the next step</u>. Despite GitHub offering private repositories, coding repositories are not the place to put such information. For restricted research data, in accordance with the data sharing policy, please use Box.com and access it from your code via the [`boxr` package](https://cran.r-project.org/web/packages/boxr/vignettes/boxr.html). Despite you sharing this code with the public, only those users with permissions will be able to ingest the data in Box. If the data sharing policy forbids using Box, create a separate directory in your computer, away from your Git repositories, for your data. For API keys, please use environment variables. For authentication tokens and SSH keys, please use a password manager. 
 
 #### Initialize the local directory as a Git repository
 Your empty project directory is not yet a Git repository i.e., the Git software in your computer is not currently tracking all the changes that will be made in this directory. 
@@ -71,7 +71,7 @@ The pop-up says "This directory does not appear to be a Git repository, Would yo
 Fill the information as follows—
 - **Name**: the name of your project. It should be pre-populated with the name of the directory you just created. For example, `my-project`.
 - **Description**: a short description of your project. This is optional but recommended.
-- **Local Path**: the path to your project directory. This should be also pre-populated with the path to your project directory. For example, `/Users/username/my-project`.
+- **Local Path**: the path to your project directory. This should also be pre-populated with the path to your project directory. For example, `/path/to/my-project`.
 - **☑ Initialize this repository with a README**: keep this option checked. This will create a `README.md` file in your project directory. This file is a standard file that is used to describe the project. This is the first file that the users of your code will see. This file should contain all information required to correctly run your code. You can read more about it [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes). 
   - This step is our first encounter with GitHub's adherence towards FAIR principles. The `README.md` file is a type of metadata associated with code. GitHub offers to create this file automatically for you.
 - **Git Ignore**: This file is a standard file that is used to tell Git which files to ignore. This is useful because you may have some files in your project directory that you do not want Git to track. For example, you may have some large files that you do not want to upload to GitHub. You can read more about it [here](https://docs.github.com/en/github/using-git/ignoring-files).
@@ -119,7 +119,7 @@ This will open a new pop-up window that looks like this—
   <img src="./images/creator_2_b.png" alt="GitHub Desktop pop-up window to publish repository" width="50%"/>
 </div>
 
-The window is pre-populated for the project `Name` and `Description`. Additionally, it gives us an option: `☑ Keep this code private`. You can check the box to keep your repository _Private_. If you choose to do so, only you will have access to your code on GitHub. You can choose to add a few collaborators later. If you do that, only you and your collaborators will have access to the code. You can later choose to make the repository _Public_, when you are ready. For this workshop, let us remove the check mark from the box, implying that we want our code repository to be _Public_. You can select a GitHub `Organization` that you may be part of in case your project is a repository in that organization. Please review the lecture notes if you are unfamiliar with GitHub organizations. Click `Publish Repository`.
+The window is pre-populated for the project `Name` and `Description`. Additionally, it gives us an option: `☑ Keep this code private`. You can check the box to keep your repository _Private_. If you choose to do so, only you will have access to your code on GitHub. You can choose to add a few collaborators later. If you do that, only you and your collaborators will have access to the code. You can later choose to make the repository _Public_, when you are ready. For this workshop, let us remove the check mark from the box, implying that we want our code repository to be _Public_. You can select a GitHub `Organization` that you may be part of in case your project is a repository in that organization. Please review the lecture notes if you are unfamiliar with GitHub organizations. In the current example, our repository is a personal project and does not belong to an organization. So, we leave it set to `None`. 
 
 The pop-up window should now look like this—
 
@@ -127,7 +127,7 @@ The pop-up window should now look like this—
   <img src="./images/creator_2_c.png" alt="GitHub Desktop pop-up window to publish repository with information filled-in" width="50%"/>
 </div>
 
-Notice how the `Publish Repository` button in the top-right corner of your window has now changed to `Fetch origin`. 
+Click `Publish Repository`. Notice how the `Publish Repository` button in the top-right corner of your window has now changed to `Fetch origin`. 
 
 Please go to https://github.com/ on your web browser, log into your account, and verify if the remote repository has indeed been created. In the GitHub website, you can do so by clicking on your profile icon in the top-right corner of the website, then click on `Your repositories`. My GitHub page looks like this—
 
@@ -159,9 +159,9 @@ You have now created a remote copy of your local git repository on GitHub.
 
 ### Step 3: the Git workflow
 
-#### Creating an R virtual environment
+#### Creating an R project
 
-Open RStudio. Select `File > Open Project`. Navigate to the local project directory that we created in step 1. Select the project directory and click `Open`. This will open the project in RStudio. This step would also create R's virtual environment `.Rproj` file in the project directory. This file is used to keep track of the R packages that are used in the project. 
+Open RStudio. Select `File > Open Project`. Navigate to the local project directory that we created in step 1. Select the project directory and click `Open`. This will open the project in RStudio. At this step, RStudio will create a project settings file with the extension `.Rproj` in the project directory. 
 
 In our example so far, RStudio automatically created the `my-project.Rproj` file in our project directory. This object creation represents a change that has occurred in our project directory. This change is reflected in the GitHub Desktop window. The `Changes` tab in the GitHub Desktop window should now look like this—
 
@@ -169,19 +169,19 @@ In our example so far, RStudio automatically created the `my-project.Rproj` file
   <img src="./images/creator_3_a.png" alt="GitHub Desktop window with the changes tab showing the changes in the project directory" width="90%"/>
 </div>
 
-The green plus sign next to the R project file in the `Changes` tab indicates that the nature of the change is the _addition_ of a new file to the project directory. Let us ask GitHub Desktop to track this change. In the bottom-left corner of the GitHub Desktop window, you will see a `Commit` box. Type in a short message that describes the change that has occurred. In our example, we will type in "Create R project file". This message is called a _commit message_. It is a short message that describes the change that is used to keep track of the changes that you have made in your project directory. Click on the `Commit to main` button. This will `commit` the change to the local Git repository i.e., the local Git software will take a snapshot of this change. This is similar to saving a text file after making some edits. The GitHub Desktop window should now look like this—
+The green plus sign next to the R project file in the `Changes` tab indicates that the nature of the change is an _addition_ of a new file to the project directory. Let us ask GitHub Desktop to track this change. In the bottom-left corner of the GitHub Desktop window, you will see a `Commit` box. Type in a short message that describes the change that has occurred. In our example, we will type in "Create R project file". This message is called a _commit message_. It is a short message that describes the change. It is used to keep track of the changes that you have made in your project directory. Click on the `Commit to main` button. This will _commit_ the change to the local Git repository i.e., the local Git software will take a snapshot of this change. This is similar to saving a text file after making some edits. The GitHub Desktop window should now look like this—
 
 <div style="display: flex; justify-content: center">
   <img src="./images/creator_3_b.png" alt="GitHub Desktop window indicating a push to origin option" width="90%"/>
 </div>
 
-Notice how the `Fetch origin` button on the top menu has now changed to `Push origin`. Click on the `Push origin` button. This will `push` the changes to the remote copy of the local Git repository on GitHub. This means that it will synchronize the changes to the remote copy of your project. Once your click the `Push origin`, the button will revert back to `Fetch origin`. Go to the GitHub website to verify if the changes have been pushed to the remote copy of your project. You should see a page that looks like this—
+Notice how the `Fetch origin` button on the top menu has now changed to `Push origin`. Click on the `Push origin` button. This will _push_ the changes to the remote copy of the local Git repository on GitHub. This means that it will synchronize the changes to the remote copy of your project. Once your click the `Push origin`, the button will revert back to `Fetch origin`. Go to the GitHub website to verify if the changes have been pushed to the remote copy of your project. You should see a page that looks like this—
 
 <div style="display: flex; justify-content: center">
   <img src="./images/creator_3_c.png" alt="GitHub web page with the repository details" width="90%"/>
 </div>
 
-**Git workflow**: congratulations, you have just performed a git workflow! This sequence of steps is by far the most common workflow that you will use when you are working on a project with Git & GitHub. You will make changes to your project directory (editing), `commit` the changes to the local Git repository (asking local Git software to remember the changes), and then `push` the changes to the remote copy of your local Git repository (asking GitHub to synchronize the changes with your local Git software). This is the workflow that you will use to keep track of your changes and to share your code with your collaborators.
+**Git workflow**: congratulations, you have just performed a git workflow! This sequence of steps is by far the most common workflow that you will use when you are working on a project with Git & GitHub. You will make changes to your project directory (editing), _commit_ the changes to the local Git repository (ask the local Git software to remember the changes), and then _push_ the changes to the remote copy of your local Git repository (ask GitHub to synchronize the changes with your local Git software). This is the workflow that you will use to keep track of your changes and to share your up-to-date code with your collaborators.
 
 #### Editing the license file
 
@@ -195,9 +195,9 @@ To edit this file, go to RStudio. In the bottom-right corner of the RStudio wind
 
 We have just made our second significant change to our project directory. Follow the steps in the Git workflow as before. Observe the change in the `Changes` tab in the GitHub Desktop window. The yellow dot symbol next to the `LICENSE` file in the `Changes` tab indicates that the nature of the change is the _modification_ of an existing file in the project directory. 
 
-Let us ask the local Git software to remember the change by using `commit`. In the bottom-left corner of the GitHub Desktop window, type in a short message that describes the change that has occurred. In our example, we will type in "Update license". Click on the `Commit to main` button. This will `commit` the change to the local Git repository.
+Let us ask the local Git software to remember the change by using _commit_. In the bottom-left corner of the GitHub Desktop window, type in a short message that describes the change that has occurred. In our example, we will type in "Update license". Click on the `Commit to main` button. This will _commit_ the change to the local Git repository.
 
-Let us synchronize the new change with the remote repository. Click on the `Push origin` button. This will `push` the changes to the remote copy of the local Git repository on GitHub. 
+Let us synchronize the new change with the remote repository. Click on the `Push origin` button. This will _push_ the changes to the remote copy of the local Git repository on GitHub. 
 
 You have just completed the Git workflow for the second time. Go to the GitHub website to verify if the changes have been pushed to the remote copy of your project.
 
@@ -205,7 +205,7 @@ You have just completed the Git workflow for the second time. Go to the GitHub w
 
 Now that you have gotten the hang of things, let us work as usual.
 
-Create a new file within your project directory. This will be an R script. You can name anything you like, for example, `exploratory_data_analysis.R`. Copy the code below and paste it in the R script that you just created. Save the file.
+Create a new file within your project directory. This will be an R script. You can name it anything you like, for example, `exploratory_data_analysis.R`. Copy the code below and paste it in the R script that you just created. Save the file.
 
 ```r
 ###########################
@@ -294,7 +294,7 @@ install.packages("boxr")
 library(boxr)
 ```
 
-The code below authenticates your RStudio with your Box account. If you are not already logged into Box after running this code, you may be asked to log into Box. Identify Box as your hard disk in the cloud.
+The code below authenticates your RStudio with your Box account. If you are not already logged into Box after running this code, you may be asked to log into Box via your browser. Identify Box as your "hard disk in the cloud".
 
 ```r
 box_auth(client_id = "627lww8un9twnoa8f9rjvldf7kb56q1m",
@@ -410,9 +410,9 @@ Let's take a look at what all this data analysis has done to our project directo
   <img src="./images/creator_3_f.png" alt="GitHub Desktop changes tab" width="90%"/>
 </div>
 
-Let us complete the Git workflow. We have made our edits. Let us `commit` the changes locally, then `push` the changes to the remote repository. You know what to do!
+Let us complete the Git workflow. We have made our edits. Let us _commit_ the changes locally, then _push_ the changes to the remote repository. You know what to do!
 
-You have now mastered git workflow, which allows you to make changes to your project directory, and then push those changes to the remote repository. This is the essence of version control. You can now go back to any previous version of your project directory. You can also share your project directory with others. This is the essence of collaboration.
+You have now mastered git workflow, which allows you to make changes to your project directory, and then push those changes to the remote repository. This is the essence of version control. You can now go back to any previous version of your project directory. You can also share your project directory with others. This is the essence of FAIR collaboration.
 
 <div style="display: flex; justify-content: center">
   <img src="./images/creator_3.png" alt="Git workflow" width="50%"/>
@@ -450,4 +450,47 @@ Click on the `New issue` button to create a new issue. When reporting a bug, ple
 
 To learn more about GitHub issues, please see [this documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues) .
 
+## Advanced concepts in GitHub
+At the workshop, we learned of some basic GitHub features. Primarily, we focussed on the features relevant to the creator and consumer workflows. In this section, we will learn about some advanced features in GitHub. These features are relevant for you to collaborate and to contribute to open source projects. Specifically, we will learn about—
 
+- Contributor workflow
+- Project manager workflow
+
+That is to say that our workflow, now does not end as a consumer but continues on as a contributor. This way we give back to the community. We will also learn about the project manager workflow, which is relevant for project managers who are responsible for managing contributions made by other to the project. The overall workflow is shown below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/advanced_workflow.png" alt="Advanced workflow" width="90%"/>
+</div>
+
+## Contributor workflow
+
+When playing the role of a contributor, researchers contribute to the code of others by adding new features, fixing bugs, or improving their documentation.
+
+
+### Adding collaborators
+Pull
+
+### Step 1: Fork a remote repository
+
+### Step 2: Clone a remote repository
+
+### Step 3: Create a new branch
+
+### Step 4: the Git workflow
+
+### Step 5: Create a pull request
+
+
+## Project manager workflow
+
+When playing the role of a project manager, researchers manage the development of a software project that includes your own code, and the code from others (your team, your collaborators, and open source contributors from the public).
+
+The main task here is to manage the pull requests made by others. You decide which pull requests to merge into the main branch of the project. When multiple pull requests are made to the same part of the code, you must decide which pull request to merge. This step is called _merging_. It involves resolving conflicts between the pull requests. 
+
+### Merging (conflict resolution)
+
+To see a list of pull requests that have been made by other, click on the `Pull requests` tab on the GitHub repository page. See below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/github_pull_requests.png" alt="GitHub pull requests tab" width="50%"/>
+</div>
