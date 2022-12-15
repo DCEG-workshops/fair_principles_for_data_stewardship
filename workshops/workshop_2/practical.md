@@ -332,6 +332,12 @@ Please pass the directory ID of the `DCEG GitHub_RStudio_FAIR Workshop` folder t
   <img src="./images/creator_3_d.png" alt="Box folder URL" width="50%"/>
 </div>
 
+Let's plug the folder ID in—
+
+```r
+box_setwd(dir_id = 185773884882)
+```
+
 If this step is successful, you will see the following message in the console—
 
 ```shell
@@ -354,6 +360,12 @@ The `file_id` argument is the file ID of the `bc_data.csv` file. You can find th
 <div style="display: flex; justify-content: center">
   <img src="./images/creator_3_e.png" alt="Box file URL" width="50%"/>
 </div>
+
+Let's plug the file ID in—
+
+```r
+bc_data = box_read(file_id = 1091149294442) 
+```
 
 If this step is successful, you will see the following message in the console—
 
@@ -425,10 +437,11 @@ When playing the role of a consumer, researchers consume other people’s code t
 Specifically, we will learn about—
 1. Cloning a repository.
 2. Asking for help or reporting bugs in a project.
+3. `source`: an R function to directly run code from a file (local or remote).
 
 ### Clone a remote Git repository
 
-To run someone else's code, we must first _clone_ their remote Git repository on GitHub. This is similar to downloading a file from the internet. The difference is that you are downloading a project directory, which is a collection of files and folders.
+To run someone else's code, we must first _clone_ their remote Git repository on GitHub. This is similar to downloading a file from the internet. The difference is that you are downloading a project directory, which is a collection of files and folders. Additionally, this project directory is version controlled, which means that you can go back to any previous version of the project directory. This is important for reproducibility because you can always go back to the specific version of the project directory that was used to generate the results in the paper that you are trying to reproduce.
 
 To clone a remote Git repository, you must first find the URL of the remote repository. 
 
@@ -449,6 +462,12 @@ To create a new issue, click on the `Issues` tab on the GitHub repository page. 
 Click on the `New issue` button to create a new issue. When reporting a bug, please provide as much information as possible (e.g., the OS you are working on, your virtual environment set up, etc.). This will help the project maintainers to reproduce the bug exactly.
 
 To learn more about GitHub issues, please see [this documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues) .
+
+
+### `source`: an R function to directly run code from a file (local or remote)
+
+The `source` function is a function from the `base` library in R that allows you to directly run code from a file, URL, connection, or expression. This is useful when you want to run a single R script from someone's code. Since the method supports a URL, you can read the file located remotely on GitHub and run it locally.
+
 
 ## Advanced concepts in GitHub
 At the workshop, we learned of some basic GitHub features. Primarily, we focussed on the features relevant to the creator and consumer workflows. In this section, we will learn about some advanced features in GitHub. These features are relevant for you to collaborate and to contribute to open source projects. Specifically, we will learn about—
@@ -475,6 +494,7 @@ Pull
 ### Step 2: Clone a remote repository
 
 ### Step 3: Create a new branch
+Commit to main
 
 ### Step 4: the Git workflow
 
