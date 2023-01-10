@@ -14,8 +14,8 @@ menubar_toc: true
 ## Learning objectives
 
 - Become conversant with the terms— Findable, Accessible, Interoperable, and Reusable (FAIR).
-- Review how Box helped us adhere to the FAIR principles.
-- Learn how Git & GitHub can help us achieve FAIRness.
+- Review how Box helped us adhere to the FAIR principles with respect to data.
+- Learn how Git & GitHub can help us achieve FAIRness with respect to the code/software that we develop.
 - Learn about resources within DCEG to discuss the FAIR principles, and the challenges of applying them to your bespoke research setting.
 
 ## Lecture notes
@@ -136,7 +136,7 @@ We can immediately see the benefits of this setup. It gives us a flexible framew
 The main reasons why Box is not a suitable platform to store your code are—
 - Box and GitHub are designed for different purposes. 
   - Box is a file storage service, while GitHub is a programming-aware, collaborative code hosting service. 
-  - This is the same reason why you wouldn't use MS Word to write R code. MS Word is a genera-purpose text editor, while RStudio is an integrated development environment (IDE) specially designed for R. RStudio has features that shows a *programming-awareness* of the R programming language, such as— [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting), [code completion](https://en.wikipedia.org/wiki/Intelligent_code_completion), and [code folding](https://en.wikipedia.org/wiki/Code_folding). These features are not available in MS Word, making it an unsuitable candidate for writing code.
+  - This is the same reason why you wouldn't use MS Word to write R code. MS Word is a general-purpose text editor, while RStudio is an integrated development environment (IDE) specially designed for R. RStudio has features that shows a *programming-awareness* of the R programming language, such as— [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting), [code completion](https://en.wikipedia.org/wiki/Intelligent_code_completion), and [code folding](https://en.wikipedia.org/wiki/Code_folding). These features are not available in MS Word, making it an unsuitable candidate for writing code.
   - GitHub also shows programming-awareness by providing features, such as— syntax highlighting for a plethora of programming languages, ability to search for projects only written in a specific programming language, and support to display special file formats like Jupyter notebooks.
   - GitHub also provides features for code management, such as— [code review](https://en.wikipedia.org/wiki/Code_review), [issue tracking](https://en.wikipedia.org/wiki/Issue_tracking_system), and [pull requests](https://en.wikipedia.org/wiki/Pull_request). These features are not available in Box.
 - Box and GitHub use different types of version control.
@@ -156,14 +156,14 @@ The main reasons why Box is not a suitable platform to store your code are—
 
 #### Why can't I put my data on GitHub?
 
-You absolutely can! A stellar example came during the outbreak of the COVID-19 pandemic. Johns Hopkins University developed a resource to track COVID cases, recoveries, and deaths. [They shared this data on GitHub](https://github.com/CSSEGISandData/COVID-19). At that time, there was no other resource in the US to monitor the pandemic. This resource allowed a proliferation of many public health tools that used this data to generate insights. The COVID app diaplayed by the Google search engine also used this data.
+You absolutely can! A stellar example came during the outbreak of the COVID-19 pandemic. Johns Hopkins University developed a resource to track COVID cases, recoveries, and deaths. [They shared this data on GitHub](https://github.com/CSSEGISandData/COVID-19). At that time, there was no other resource in the US to monitor the pandemic. This resource allowed a proliferation of many public health tools that used this data to generate insights. The COVID app displayed by the Google search engine also used this data.
 
-However, GitHub is ideally suited to host data that you want to make public. If you want to host data that you want to keep provate or provide controlled access to only a few people, GitHub is not a suitable option to host such a data.
+However, GitHub is ideally suited to host data that you want to make public. If you want to host data that you want to keep private or provide controlled access to only a few people, GitHub is not a suitable option to host such a data.
 
 There are another couple of points to remember—
 - GitHub is not a data storage service. It is a code hosting service. 
   - GitHub is not designed to store large datasets. GitHub has a limit on the size of the files you can upload. This limit is 100 MB. This is not a problem for most research data. However, if you have a large dataset, you will need to use a different service to host your data.
-  - Your NIH Box account has a individual file size limit of 150 GB. However, there is no limit to the number of files you can store on Box.
+  - Your NIH Box account has an individual file size limit of 150 GB. However, there is no limit to the number of files you can store on Box.
 - GitHub is not a data management service. It lacks the granular permissions provided by Box.
   - GitHub does not provide a way to share a specific file or a sub-folder with a specific person. You can only share the entire repository with the person. This is not a problem if you want to share your entire project with this person. However, if you only want to share a specific file, you should prefer Box to host and share your data.
   - Box also provides granular permissions such as only allowing the user to view the files but not modify it. This is again preferable for data hosting.
