@@ -11,7 +11,7 @@ menubar_toc: true
 
 The R script is used in the practical section can be downloaded [here](practical_assets/Workshop_code_for_Rstudio_Box_session.R) and is also shown below
 
-```
+```r
 ###########################
 # SETUP
 ###########################
