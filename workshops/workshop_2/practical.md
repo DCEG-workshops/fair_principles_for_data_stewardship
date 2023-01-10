@@ -443,9 +443,76 @@ Specifically, we will learn about—
 
 To run someone else's code, we must first _clone_ their remote Git repository on GitHub. This is similar to downloading a file from the internet. The difference is that you are downloading a project directory, which is a collection of files and folders. Additionally, this project directory is version controlled, which means that you can go back to any previous version of the project directory. This is important for reproducibility because you can always go back to the specific version of the project directory that was used to generate the results in the paper that you are trying to reproduce.
 
-To clone a remote Git repository, you must first find the URL of the remote repository. 
+To clone a remote Git repository, you must first find the URL of the remote repository. For the practice exercise, we will use the following toy repository— [`https://github.com/DCEG-workshops/replication-demo`](https://github.com/DCEG-workshops/replication-demo). 
 
-You can find the URL by clicking on the `Code` button on the GitHub repository page. See below—
+Go to the above URL using your web browser. You should see something like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_a.png" alt="GitHub repository to clone" width="90%"/>
+</div>
+
+Click on the green `Code` button on the GitHub repository page, highlighted in red, in the image above. You should see a drop-down menu as shown below— 
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_b.png" alt="GitHub repository with Code button clicked" width="90%"/> 
+</div>
+
+Under the `HTTPS` tab in the drop-down box, you will see an option to `Open with GitHub Desktop`. Please click on this option. You will likely get a pop-up saying "Open GitHub Desktop?". Please click on `Open GitHub Desktop`. This pop-up is shown below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_c.png" alt="Open GitHub Desktop pop-up" width="90%"/>
+</div>
+
+This should open GitHub Desktop on your computer and offer you to clone the remote repository on your local machine. The GitHub Desktop window is shown below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_d.png" alt="GitHub Desktop clone window" width="50%"/>
+</div>
+
+Please edit the `Local Path` and set it to the directory, where you would like the cloned project to be located in your computer. Then, click on the `Clone` button. This will clone the remote repository on your local machine. The GitHub Desktop window, now would look something like this—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_e.png" alt="GitHub Desktop clone window with cloned repository" width="50%"/>
+</div>
+
+If you navigate to the directory that you specified in the `Local Path` field, you should see the cloned project directory. Not only did GitHub Desktop download this project for you, but it also downloaded the entire version-controlled history of this project. To check, please go to the `History` tab in GitHub Desktop. 
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1_f.png" alt="GitHub Desktop cloned repo history tab" width="90%"/>
+</div>
+
+You have now cloned a remote Git repository on your local machine. You can now run the code in this project directory.
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/consumer_1.png" alt="Overall workflow diagram for cloning a remote repository" width="50%"/>
+</div>
+
+#### Replication exercise
+For a concrete exercise in performing a replication study, please take a look at the `modeling.R` R script in the cloned repository.
+
+You will already be familiar with the first half of the script. It is the same code that we used in the `Creator` workflow. It simply locates and ingests a file from Box. Except, the data that was used to perform the analysis in the second-half of the script is not made available to you in Box. However, the data is very similar to the one you practiced with in the `Creator` workflow. Can you run the code in `modeling.R` but replace the directory and file ID with the data you used in the `Creator` workflow?
+
+Specifically, you will need to replace the following lines of code in `modeling.R`—
+
+1) Replace the directory ID with the one you used in the `Creator` workflow.
+
+```r
+box_setwd(dir_id = 185780841823)
+```
+
+2) Replace the file ID with the one you used in the `Creator` workflow.
+
+```r
+bc_data = box_read(file_id = 1091187602667)
+```
+
+The rest of the code in `modeling.R` build a logistic regression model with the data and stores the model parameters in a file named `model.txt`. You may want to change this line as well.
+
+```r
+sink("model.txt")
+```
+
+Change the file name to something else for e.g. `model_replicated.txt`. Go ahead and compare the two files. Are they identical? are they similar? or are they completely different?
 
 ### GitHub issues
 
@@ -461,12 +528,28 @@ To create a new issue, click on the `Issues` tab on the GitHub repository page. 
 
 Click on the `New issue` button to create a new issue. When reporting a bug, please provide as much information as possible (e.g., the OS you are working on, your virtual environment set up, etc.). This will help the project maintainers to reproduce the bug exactly.
 
-To learn more about GitHub issues, please see [this documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues) .
+Feel free to practice this on our toy repository. You can file your made-up issue here: [https://github.com/DCEG-workshops/replication-demo/issues](https://github.com/DCEG-workshops/replication-demo/issues).
+
+For a more practical example, if you would like to suggest concrete changes to this workshop website, please make a formal request here: [https://github.com/DCEG-workshops/fair_principles_for_data_stewardship/issues](https://github.com/DCEG-workshops/fair_principles_for_data_stewardship/issues).
+
+To learn more about GitHub issues, please see [this documentation](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/about-issues).
 
 
 ### `source`: an R function to directly run code from a file (local or remote)
 
-The `source` function is a function from the `base` library in R that allows you to directly run code from a file, URL, connection, or expression. This is useful when you want to run a single R script from someone's code. Since the method supports a URL, you can read the file located remotely on GitHub and run it locally.
+The `source` function is a special function from the `base` library in R that allows you to directly run code from a file, URL, connection, or expression. This is useful when you want to run a single R script from someone's code. Since the method supports a URL, you can read the file located remotely on GitHub and run it locally.
+
+To practice code injection, take a look athe the repository we just cloned. It contains a file called `code_injection.R`. You can source this file by running the following code in RStudio's Console—
+
+```r
+source("https://raw.githubusercontent.com/DCEG-workshops/replication-demo/main/code_injection.R")
+```
+
+The RStudio window sourcing this file is shown below—
+
+<div style="display: flex; justify-content: center">
+  <img src="./images/code_injection.png" alt="RStudio Console window sourcing code_injection.R" width="90%"/>
+</div>
 
 
 ## Advanced concepts in GitHub
