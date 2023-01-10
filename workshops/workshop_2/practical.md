@@ -553,12 +553,12 @@ The RStudio window sourcing this file is shown below—
 
 
 ## Advanced concepts in GitHub
-At the workshop, we learned of some basic GitHub features. Primarily, we focussed on the features relevant to the creator and consumer workflows. In this section, we will learn about some advanced features in GitHub. These features are relevant for you to collaborate and to contribute to open source projects. Specifically, we will learn about—
+At the workshop, we learned of some basic GitHub features. We focussed on the features relevant to the creator and the consumer workflows. In this section, we will learn about some advanced features in GitHub. These features are relevant if you want to collaborate with others on a project or contribute to open source projects. Specifically, we will learn about—
 
 - Contributor workflow
 - Project manager workflow
 
-That is to say that our workflow, now does not end as a consumer but continues on as a contributor. This way we give back to the community. We will also learn about the project manager workflow, which is relevant for project managers who are responsible for managing contributions made by other to the project. The overall workflow is shown below—
+That is to say that our workflow, now does not end as a consumer but continues on as a contributor. This way we give back to the community. We improve upon other people's project with our time and expertise. We will also learn about the project manager workflow, which is relevant for project managers who are responsible for managing contributions made by others to their project. The overall workflow is shown below—
 
 <div style="display: flex; justify-content: center">
   <img src="./images/advanced_workflow.png" alt="Advanced workflow" width="90%"/>
@@ -570,18 +570,25 @@ When playing the role of a contributor, researchers contribute to the code of ot
 
 
 ### Adding collaborators
-Pull
+The first feature to know about is adding collaborators. Collaborators are people who have both read and write access to the repository. That is they can download your code, run it, and make changes to it. This is useful if you want to collaborate with others on a project. You can add collaborators by going to the `Settings` tab of the repository that you own. On the left-panel, select `Collaborators`. You can then add collaborators by entering their GitHub username. You can also remove collaborators at any time. To learn more, see [this documentation](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository).
 
-### Step 1: Fork a remote repository
+### Pull
+In the `Creator` workflow, we performed a Git workflow. There we made changes to our project, committed them, and pushed them to the remote repository. However, we were working alone. In reality, there is one more command in the git workflow when working with multiple people on the same project— the `pull` command. `Pull` is used to update the local repository with the changes made to the remote repository. This is useful if you want your local copy of the repository to reflect the changes made by others to the remote repository. You can do this from GitHub Desktop, please see [this documentation](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch#pulling-to-your-local-branch-from-the-remote).
 
-### Step 2: Clone a remote repository
+You should always pull before you push. This is to avoid conflicts between your local and remote repositories. If you do not pull before you push, you may end up overwriting the changes made by others to the remote repository. This is a common mistake that beginners make. To learn more about this, please see [this documentation](https://docs.github.com/en/github/collaborating-with-pull-requests/getting-started/about-collaborative-development-models).
 
-### Step 3: Create a new branch
-Commit to main
-
-### Step 4: the Git workflow
-
-### Step 5: Create a pull request
+### Steps to contributing to a project
+If you have identified a project that you would like to contribute to, and you are not added as a collaborator there, you can still contribute to the project. The steps to take are as follows—
+1. **Step 1**: Fork a remote repository 
+   * Forking a repository is a way to create a copy of the remote repository on your GitHub account (which itself is remote but under your name). This is useful if you want to make changes to the project without affecting the original project. You can fork a repository by clicking on the `Fork` button in the top-right corner of the repository page. [Link to GitHub documentation on forking a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+2. **Step 2**: Clone a remote repository
+   * Cloning a repository is a way to download the remote repository to your local machine. This is useful if you want to make changes to the project on your local machine. You can clone a repository by clicking on the `Code` button in the top-right corner of the repository page. We did this in the `Consumer` workflow. Except, we are not directly cloning the repository of our interest. Instead, we forked the repository into our account and are not cloning the repository from our own account. [Link to GitHub Desktop documentation on cloning a repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop).
+3. **Step 3**: Create a new branch 
+   * Branching is a way to create a new branch of the repository. This is good practice because it allows you to make changes to the project without affecting the main branch. This is similar to `Track changes` is MS Word. It allows you to suggest changes without affecting the original document. You can create a new branch in the repository by going to GitHub Desktop, click on the `Current branch` on the ribbon menu on the top. In the field `Filter` type a name for your branch. Name should reflect what you are planning to implement. Then click on `New branch`. [Link to GitHub Desktop documentation on branching](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/making-changes-in-a-branch/managing-branches).
+4. **Step 4**: the Git workflow 
+   * Continue working as in the git workflow in the `Contributor` workflow above. That is, make changes to the project, commit them, and push them to the forked remote repository.
+5. **Step 5**: Create a pull request
+   * A pull request is a way to suggest changes to the original project. You can create a pull request by going to the forked repository on your GitHub account. Then click on the `Pull requests` tab. Then click on the `New pull request` button. Then click on the `Create pull request` button. [Link to GitHub documentation on creating a pull request](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 
 ## Project manager workflow
@@ -592,8 +599,6 @@ The main task here is to manage the pull requests made by others. You decide whi
 
 ### Merging (conflict resolution)
 
-To see a list of pull requests that have been made by other, click on the `Pull requests` tab on the GitHub repository page. See below—
+To see a list of pull requests that have been made by others, click on the `Pull requests` tab on the GitHub repository page. You can then review the pull requests and decide which ones to merge. If you decide to merge a pull request, you must first resolve any conflicts that may arise. This is because the pull request may have made changes to the same part of the code as another pull request. To learn more about this, please see [this documentation](https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request#resolving-a-merge-conflict-on-github).
 
-<div style="display: flex; justify-content: center">
-  <img src="./images/github_pull_requests.png" alt="GitHub pull requests tab" width="50%"/>
-</div>
+You have now completed the arcs of a _creator_, _consumer_, _contributor_, and _project manager_. You are now ready to start your own project. Practice makes perfect. If you force a habit, you will soon find all these concepts second nature to you. It would create less of an overhead for you to achieve FAIRness in all your future projects.
