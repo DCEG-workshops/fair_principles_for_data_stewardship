@@ -31,3 +31,6 @@ The Trans-Divisional Research Program FAIR workshop will provide DCEG researcher
 - Our [paper](https://arxiv.org/abs/2206.06159) on moving towards FAIR practices in epidemiological research 
 - We  have FAIR weekly office hours every Friday 11:00-12:00, anyone is welcome to join, please check out the website at [episphere.github.io/fair/](https://episphere.github.io/fair/)
 - We also welcome any FAIR related discussions at the [FAIR gitter channel](https://gitter.im/episphere/Fair)
+- [Introduction to FAIR data principles](https://heap-exposome.eu/2022/11/07/introducing-fair-frog-and-data-gator/) by the Human Exposome Assessment Platform Team
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ki2pLR_35oM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
